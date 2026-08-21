@@ -98,7 +98,7 @@ header{
   cursor:pointer;
   transition:transform .18s ease, background .2s, border-color .2s, color .2s;
 }
-.btn-primary{background:var(--accent); color:var(--bg);padding:10px;}
+.btn-primary{background:var(--accent); color:var(--bg);padding:5px 10px 5px 10px ;}
 .btn-primary:hover{transform:translateY(-4px); filter:brightness(1.1);}
 .btn-ghost{border-color:rgba(243,236,217,0.3); color:var(--canvas);}
 .btn-ghost:hover{border-color:var(--accent); color:var(--accent);transform:translateY(-4px);}
