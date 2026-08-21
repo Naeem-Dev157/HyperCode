@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Kentucky Digitizing</title>
+<meta name="description" content="Vector art, left chest, jacket back, caps, 3D puff and small letter text digitizing — see how each service works.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<style>
+  .service-block{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:center; padding:60px 0; border-bottom:1px solid var(--line);}
+  .service-block:last-child{border-bottom:none;}
+  .service-block:nth-child(even){ direction:rtl; }
+  .service-block:nth-child(even) > *{ direction:ltr; }
+  .service-visual{ aspect-ratio:4/3; border-radius:14px; border:1px solid var(--line); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .service-visual svg{width:58%;height:58%;}
+  .service-copy .tag{margin-bottom:14px;}
+  .service-copy h2{font-size:1.7rem; margin-bottom:14px;}
+  .service-copy p{color:rgba(243,236,217,0.68); line-height:1.65; font-size:0.98rem; max-width:56ch; margin-bottom:20px;}
+  .service-copy ul{list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px;}
+  .service-copy li{ font-size:0.88rem; color:rgba(243,236,217,0.62); display:flex; gap:8px; }
+  @media (max-width:820px){ .service-block, .service-block:nth-child(even){grid-template-columns:1fr; direction:ltr;} }
+
+  .service-visual img{width:100%;height:100%;object-fit:cover;display:block;}
+</style>
+</head>
+<body class="pg-services">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="navcta">
+      <a href="contact.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Free Trial</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Services</span>
+    <h1>Six placements. One specialist digitizer for each.</h1>
+    <p>Different placements fail in different ways — a cap curves, a jacket back has to hold coverage, small text closes up if density is wrong. Every service below is handled by digitizers who work that placement daily.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--crimson) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-1.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">Vector Art</span>
+        <h2>Raster to razor-clean vector.</h2>
+        <p>Send a blurry logo, a phone photo, or a low-res PNG — we redraw it as a scalable vector file with clean paths, so it prints and stitches sharp at any size.</p>
+        <ul><li>✓ Full path clean-up, no jagged edges</li><li>✓ Color-matched to your original palette</li><li>✓ Delivered in AI, EPS, SVG and PDF</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--gold) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-2.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">Left Chest</span>
+        <h2>Small footprint, zero detail lost.</h2>
+        <p>Left chest logos have the least room for error — dense detail packed into a few square inches. We adjust stitch density and underlay so small elements stay legible instead of filling in.</p>
+        <ul><li>✓ Optimized for 3.5"–4" placement</li><li>✓ Built for polos, hats and bags alike</li><li>✓ Free resize to alternate placements</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--teal) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-3.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">Jacket Back</span>
+        <h2>Full coverage that holds its shape.</h2>
+        <p>Large-format designs need underlay and stitch sequencing that keep fabric from puckering across a big run. We build jacket backs to hold detail edge to edge without distortion.</p>
+        <ul><li>✓ Sized for full jacket-back coverage</li><li>✓ Puckering-resistant stitch sequencing</li><li>✓ Handles multi-panel and layered designs</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--violet) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-4.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">Caps</span>
+        <h2>Corrected for the curve before it's stitched.</h2>
+        <p>A flat digitized file distorts on a curved cap panel. We digitize with curvature compensation built in, so the design reads correctly once it's actually on the hoop.</p>
+        <ul><li>✓ Structured &amp; unstructured cap profiles</li><li>✓ Flat-to-curve distortion correction</li><li>✓ Front panel, side and back placements</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--crimson) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-5.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">3D Puff</span>
+        <h2>Foam-ready files that stand up clean.</h2>
+        <p>3D puff needs precise foam underlay and satin density or the edges collapse. We build files specifically for foam-backed caps so the raised effect stays crisp.</p>
+        <ul><li>✓ Foam density &amp; underlay pre-set</li><li>✓ Clean, defined edges on raised letters</li><li>✓ Compatible with standard 3D foam widths</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual" style="background:color-mix(in srgb, var(--gold) 14%, var(--bg-card));">
+        <img src="assets/gallery/service-6.jpg" alt="Kentucky Digitizing service example">
+      </div><div class="service-copy">
+        <span class="tag">Small Letter Text</span>
+        <h2>Legible lettering, even at 4mm.</h2>
+        <p>Tight text closes up fast on dense fabric. We digitize small lettering with adjusted stitch spacing so it stays readable instead of turning into a solid blob of thread.</p>
+        <ul><li>✓ Readable down to 4mm letter height</li><li>✓ Font-matched to your original file</li><li>✓ Works on knit, twill and performance fabric</li></ul>
+        <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="cta-band">
+      <div><h2>Not sure which service fits your design?</h2><p>Send it over — we'll tell you the right placement and price before you order.</p></div>
+      <a href="contact.html" class="btn btn-navlike">Ask Us First</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+      <p>Embroidery digitizing and vector art conversion for shops that need clean files, fast — with a real digitizer behind every order.</p>
+    </div>
+    <div><h4>Navigate</h4><ul><li><a href="why-us.html">Why Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a></li><li><a href="tel:03463162099">03463162099</a></li><li>Mon–Sat, 9am–7pm</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Kentucky Digitizing. All rights reserved.</span><span>Owner: Muhammad Saiqb Ansari</span><a href="tel:03161618156" class="Naeem" >Developer: Naeem Ansari</a></div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>

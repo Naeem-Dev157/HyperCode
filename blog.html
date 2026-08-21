@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Kentucky Digitizing</title>
+<meta name="description" content="Notes on embroidery digitizing — stitch density, file formats, cap placement and other things shop owners ask about.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<style>
+  .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .blog-thumb{ aspect-ratio:16/10; border-radius:10px; margin-bottom:18px; display:flex; align-items:center; justify-content:center; }
+  .blog-thumb svg{ width:40%; height:40%; }
+  .blog-card h3{ font-size:1.08rem; margin-bottom:10px; line-height:1.35; }
+  .blog-card p{ font-size:0.9rem; color:rgba(243,236,217,0.65); line-height:1.55; margin:0 0 16px; }
+  .featured-post{ display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; margin-bottom:56px; }
+  .featured-post .blog-thumb{ aspect-ratio:4/3; margin:0; }
+  .featured-post h2{ font-size:1.6rem; margin-bottom:12px; }
+  .featured-post p{ color:rgba(243,236,217,0.68); line-height:1.6; margin-bottom:18px;}
+  @media (max-width:900px){ .blog-grid{grid-template-columns:1fr 1fr;} .featured-post{grid-template-columns:1fr;} }
+  @media (max-width:560px){ .blog-grid{grid-template-columns:1fr;} }
+
+  .blog-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+</style>
+</head>
+<body class="pg-blog">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="navcta">
+      <a href="contact.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Free Trial</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Blog</span>
+    <h1>Notes from the digitizing bench.</h1>
+    <p>Short, practical write-ups on stitch density, file formats, and the small decisions that make a digitized file run clean.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="featured-post">
+      <div class="blog-thumb" style="background:color-mix(in srgb, var(--crimson) 14%, var(--bg-card)); border:1px solid var(--line);"><img src="assets/gallery/blog-1.jpg" alt="Embroidery digitizing example"></div>
+      <div>
+        <div class="blog-meta">Featured · 6 min read</div>
+        <h2>Why your stitch count matters more than your file size.</h2>
+        <p>A smaller file isn't automatically a cheaper or faster one. Here's how stitch count actually drives price, run time, and how a design will look once it's on fabric — and why two logos of the same size can cost very different amounts to digitize.</p>
+        <a href="#" class="btn btn-ghost">Read the post</a>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--gold) 14%, var(--bg-card));"><img src="assets/gallery/blog-2.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">Placement · 4 min read</div>
+        <h3>Left chest vs. full front: choosing the right size for your logo.</h3>
+        <p>How placement size changes the level of detail a digitized file can hold — and when to simplify a logo instead of shrinking it.</p>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--teal) 14%, var(--bg-card));"><img src="assets/gallery/blog-3.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">Caps · 5 min read</div>
+        <h3>Why flat digitizing files distort on curved caps.</h3>
+        <p>A walkthrough of curvature compensation and why a file built for a t-shirt won't stitch correctly on a structured cap.</p>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--violet) 14%, var(--bg-card));"><img src="assets/gallery/blog-4.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">File Formats · 3 min read</div>
+        <h3>DST vs PES vs JEF: which format does your machine actually need?</h3>
+        <p>A quick reference for the most common embroidery machine formats and which brands use which.</p>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--crimson) 14%, var(--bg-card));"><img src="assets/gallery/blog-5.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">3D Puff · 4 min read</div>
+        <h3>Getting clean edges on 3D puff letters.</h3>
+        <p>Foam density, underlay order, and the mistakes that make raised lettering collapse at the edges.</p>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--gold) 14%, var(--bg-card));"><img src="assets/gallery/blog-6.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">Text · 3 min read</div>
+        <h3>The smallest size lettering can go before it stops reading clean.</h3>
+        <p>Why small text closes up on dense fabric, and the density adjustments that keep it legible.</p>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb" style="background:color-mix(in srgb, var(--teal) 14%, var(--bg-card));"><img src="assets/gallery/blog-7.jpg" alt="Embroidery digitizing example"></div>
+        <div class="blog-meta">Jacket Back · 5 min read</div>
+        <h3>Keeping large-format designs from puckering fabric.</h3>
+        <p>How underlay and stitch sequencing hold a big jacket-back design flat across a full run.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="cta-band">
+      <div><h2>Ready to try it on your own design?</h2><p>Your first digitized file is free — see the quality before you commit.</p></div>
+      <a href="contact.html" class="btn btn-primary">Start Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+      <p>Embroidery digitizing and vector art conversion for shops that need clean files, fast — with a real digitizer behind every order.</p>
+    </div>
+    <div><h4>Navigate</h4><ul><li><a href="why-us.html">Why Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a></li><li><a href="tel:03463162099">03463162099</a></li><li>Mon–Sat, 9am–7pm</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Kentucky Digitizing. All rights reserved.</span><span>Owner: Muhammad Saiqb Ansari</span><a href="tel:03161618156" class="Naeem" >Developer: Naeem Ansari</a></div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>

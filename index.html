@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Germania+One&family=Honk:MORF@15&family=Sekuya&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kentucky Digitizing — Embroidery Digitizing &amp; Vector Art</title>
+<meta name="description" content="Kentucky Digitizing turns your artwork into clean, machine-ready embroidery files. Fast turnaround, free first-order trial, dedicated digitizer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<style>
+  .hero{ position:relative; padding:96px 0 76px; overflow:hidden;
+    background: radial-gradient(circle at 82% 8%, rgba(230,57,80,0.16), transparent 45%),
+                radial-gradient(circle at 4% 92%, rgba(124,92,252,0.14), transparent 45%);
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; position:relative; z-index:1;}
+  .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--gold); padding:6px 12px; border:1px solid rgba(242,183,5,0.4); border-radius:20px; margin-bottom:22px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--crimson);}
+  .hero h1{ font-size:clamp(2.3rem,4.8vw,3.8rem); line-height:1.04; font-weight:800; color:var(--canvas);}
+  .hero h1 .sw1{color:var(--crimson);}
+  .hero h1 .sw2{color:var(--gold);}
+  .hero p.lead{ margin-top:22px; font-size:1.08rem; line-height:1.65; color:rgba(243,236,217,0.76); max-width:46ch;}
+  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .trust-row{display:flex; gap:26px; margin-top:38px; flex-wrap:wrap;}
+  .trust-row div{font-size:0.8rem; color:rgba(243,236,217,0.55);}
+  .trust-row strong{display:block; font-family:'IBM Plex Mono',monospace; font-size:1.12rem; color:var(--canvas);}
+
+  .hoop{ position:relative; aspect-ratio:1/0.82; border-radius:16px; background:var(--bg-card); border:1px solid var(--line); overflow:hidden;
+    box-shadow:0 40px 80px rgba(0,0,0,0.5);}
+  .hoop-inner{ position:absolute; inset:26px; border:2px dashed rgba(243,236,217,0.18); border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .hoop-fabric{ position:absolute; inset:0; background-image: linear-gradient(rgba(243,236,217,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(243,236,217,0.05) 1px, transparent 1px); background-size:14px 14px;}
+  .hoop-caption{ position:absolute; bottom:18px; left:18px; right:18px; display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:rgba(243,236,217,0.55); text-transform:uppercase; letter-spacing:0.05em;}
+  .hoop-caption span.hot{color:var(--crimson);}
+  .hoop-mark{ position:relative; z-index:1; text-align:center; }
+  .hoop-mark svg{ width:150px; height:150px; }
+  .stitch-path{ fill:none; stroke-width:3; stroke-linecap:round; stroke-dasharray:6 7; stroke-dashoffset:900; animation:draw 3s ease forwards 0.4s;}
+  .stitch-path.c1{stroke:var(--crimson);}
+  .stitch-path.c2{stroke:var(--gold); animation-delay:1s;}
+  .stitch-path.c3{stroke:var(--teal); animation-delay:1.7s;}
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .hoop-hint{ margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:rgba(243,236,217,0.4); text-transform:uppercase; letter-spacing:0.06em;}
+
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;} .hoop{order:-1;} }
+
+  .spool-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:900px){.spool-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.spool-grid{grid-template-columns:1fr;}}
+
+  .process-line{ position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .process-line::before{ content:""; position:absolute; top:23px; left:5%; right:5%; height:0; border-top:3px dashed color-mix(in srgb, var(--accent) 45%, transparent); z-index:0;}
+  .step{position:relative; z-index:1;}
+  .step-badge{ width:46px; height:46px; border-radius:50%; background:var(--accent); color:var(--bg); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-weight:700; margin-bottom:20px; border:4px solid var(--bg);}
+  .step h3{font-size:1.02rem; color:var(--canvas); margin-bottom:8px; font-weight:700;}
+  .step p{font-size:0.88rem; color:rgba(243,236,217,0.62); line-height:1.55; margin:0;}
+  @media (max-width:900px){.process-line{grid-template-columns:1fr 1fr; row-gap:36px;} .process-line::before{display:none;}}
+  @media (max-width:560px){.process-line{grid-template-columns:1fr;}}
+
+  .quote-row{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .quote-card p{font-size:0.93rem; line-height:1.6; color:rgba(243,236,217,0.8); margin:0 0 16px;}
+  .quote-who{display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;}
+  .quote-who strong{color:var(--canvas); display:block;}
+  .quote-who span{color:rgba(243,236,217,0.5);}
+  .stars{color:var(--gold); letter-spacing:2px;}
+  @media (max-width:900px){.quote-row{grid-template-columns:1fr;}}
+
+  .hero-photo{position:relative;} .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;} .hero-photo .hoop-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,13,.12),rgba(10,11,13,.02));pointer-events:none;}
+</style>
+</head>
+<body class="pg-home">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="navcta">
+      <a href="contact.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Free Trial</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Free first digitizing run</span>
+      <h1>Your artwork, <span class="sw1">stitch</span>-<span class="sw2">ready</span> in hours.</h1>
+      <p class="lead">Kentucky Digitizing converts logos and artwork into clean, punch-perfect embroidery files for left chest, jacket backs, caps and more. One dedicated digitizer, one file that runs right the first time.</p>
+      <div class="hero-ctas">
+        <a href="pricing.html" class="btn btn-primary">Start Free Trial Order</a>
+        <a href="services.html" class="btn btn-ghost">See What We Digitize</a>
+      </div>
+      <div class="trust-row">
+        <div><strong>6–8 hrs</strong>Typical turnaround</div>
+        <div><strong>1st order</strong>On the house</div>
+        <div><strong>1 digitizer</strong>Assigned to your account</div>
+      </div>
+    </div>
+    <div class="hoop hero-photo">
+      <img src="assets/gallery/hero-embroidery-machine.jpg" alt="Embroidery machine stitching a Kentucky Digitizing design">
+      <div class="hoop-overlay"></div>
+      <div class="hoop-caption"><span>PROFESSIONAL EMBROIDERY</span><span class="hot">→ KENTUCKYDIGITIZING</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="stitch-rule"></div>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Why teams switch to us</span>
+      <h2>Digitizing that actually holds up on the machine.</h2>
+      <p>Every file gets a human quality pass before it reaches you — not just an auto-convert.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="tag">01</div><h3 style="margin:14px 0 8px;font-size:1.05rem;">Fair, upfront pricing</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Flat per-file rates with no surprise add-ons, built for shops running high order volume.</p></div>
+      <div class="card"><div class="tag">02</div><h3 style="margin:14px 0 8px;font-size:1.05rem;">Fast bench-to-download</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Most files are back in your inbox within 6–8 hours, even during peak season.</p></div>
+      <div class="card"><div class="tag">03</div><h3 style="margin:14px 0 8px;font-size:1.05rem;">A free first run</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Send your first design at no cost and judge the stitch quality before you commit.</p></div>
+      <div class="card"><div class="tag">04</div><h3 style="margin:14px 0 8px;font-size:1.05rem;">One point of contact</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">A named digitizer and account manager stay on your file for every revision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">What we digitize</span>
+      <h2>Six formats, one consistent stitch quality.</h2>
+      <p>From clean vector line-art to dense 3D puff caps, each service is handled by digitizers who specialize in that exact placement.</p>
+    </div>
+    <div class="spool-grid">
+      <div class="card"><div class="pill-icon" style="background:var(--crimson);">✎</div><h3 style="font-size:1.05rem;margin-bottom:8px;">Vector Art</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Raster logos redrawn as crisp, scalable vector line-art ready for print or stitch.</p></div>
+      <div class="card"><div class="pill-icon" style="background:var(--gold);">◧</div><h3 style="font-size:1.05rem;margin-bottom:8px;">Left Chest</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Compact, detail-tight digitizing sized correctly for polos and left-chest placement.</p></div>
+      <div class="card"><div class="pill-icon" style="background:var(--teal);">▤</div><h3 style="font-size:1.05rem;margin-bottom:8px;">Jacket Back</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Large-format files built to hold detail and coverage across a full jacket back.</p></div>
+      <div class="card"><div class="pill-icon" style="background:var(--violet);">◐</div><h3 style="font-size:1.05rem;margin-bottom:8px;">Caps</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Curvature-corrected digitizing so designs sit true on structured and unstructured caps.</p></div>
+      <div class="card"><div class="pill-icon" style="background:var(--crimson);">▲</div><h3 style="font-size:1.05rem;margin-bottom:8px;">3D Puff</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Foam-ready underlay and density settings for raised, dimensional cap embroidery.</p></div>
+      <div class="card"><div class="pill-icon" style="background:var(--gold);">A</div><h3 style="font-size:1.05rem;margin-bottom:8px;">Small Letter Text</h3><p style="font-size:0.9rem;color:rgba(243,236,217,0.62);margin:0;line-height:1.55;">Tight lettering digitized to stay legible even at 4mm on dense fabric.</p></div>
+    </div>
+    <div style="margin-top:30px;"><a href="services.html" class="btn btn-ghost">View all services →</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">How ordering works</span>
+      <h2>Four steps from upload to stitched file.</h2>
+      <p>The whole order lives in your account, so you can track every file and payment in one place.</p>
+    </div>
+    <div class="process-line">
+      <div class="step"><div class="step-badge">1</div><h3>Create your account</h3><p>Register in under a minute — your dashboard tracks every design, file and invoice.</p></div>
+      <div class="step"><div class="step-badge">2</div><h3>Upload your artwork</h3><p>Drop in your logo or design and tell us the placement — left chest, cap, jacket back and so on.</p></div>
+      <div class="step"><div class="step-badge">3</div><h3>We digitize &amp; QA</h3><p>A dedicated digitizer builds the file, then it's checked for stitch quality before release.</p></div>
+      <div class="step"><div class="step-badge">4</div><h3>Download &amp; pay</h3><p>Preview the finished file, approve it, and pay only once you're happy with the result.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stats-grid">
+    <div class="stat"><strong data-count="98000" data-suffix="+">98,000</strong><span>Files completed</span></div>
+    <div class="stat"><strong data-count="31500" data-suffix="+">31,500</strong><span>Shops served</span></div>
+    <div class="stat"><strong data-count="8" data-suffix=" hrs">8</strong><span>Average turnaround</span></div>
+    <div class="stat"><strong data-count="11" data-suffix=" yrs">11</strong><span>Digitizing experience</span></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">From the shops we work with</span>
+      <h2>What decorators say after their first order.</h2>
+    </div>
+    <div class="quote-row">
+      <div class="card quote-card"><div class="stars">★★★★★</div><p>Turnaround was faster than what we were used to, and the stitch count came in lighter than expected — big win on cost.</p><div class="quote-who"><div><strong>Marcus D.</strong><span>Embroidery Shop Owner</span></div></div></div>
+      <div class="card quote-card"><div class="stars">★★★★★</div><p>Having one digitizer stay on our account made revisions painless. We stopped shopping around after the second order.</p><div class="quote-who"><div><strong>Renee A.</strong><span>Production Manager</span></div></div></div>
+      <div class="card quote-card"><div class="stars">★★★★★</div><p>The free trial file actually ran clean on our machine first try. That's what got us to switch providers.</p><div class="quote-who"><div><strong>Yusuf K.</strong><span>Apparel Decorator</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div><h2>Send your first design — it's on us.</h2><p>Create a free account and get your trial file digitized within 8 hours.</p></div>
+      <a href="contact.html" class="btn btn-navlike">Register Free</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+      <p>Embroidery digitizing and vector art conversion for shops that need clean files, fast — with a real digitizer behind every order.</p>
+    </div>
+    <div><h4>Navigate</h4><ul><li><a href="why-us.html">Why Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a></li><li><a href="tel:03463162099">03463162099</a></li><li>Mon–Sat, 9am–7pm</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Kentucky Digitizing. All rights reserved.</span>
+    <span>Owner: Muhammad Saiqb Ansari</span>
+	<a href="tel:03161618156" class="Naeem" >Developer: Naeem Ansari</a>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

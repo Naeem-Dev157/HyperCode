@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Kentucky Digitizing</title>
+<meta name="description" content="A look at the range of embroidery digitizing work Kentucky Digitizing produces across placements and stitch types.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<style>
+  .filter-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:34px; }
+  .filter-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.76rem; text-transform:uppercase; letter-spacing:0.05em;
+    padding:8px 16px; border-radius:20px; border:1px solid var(--line); background:none; color:rgba(243,236,217,0.6);
+    cursor:pointer; transition:all .2s;
+  }
+  .filter-btn:hover{ border-color:var(--accent); color:var(--canvas); }
+  .filter-btn.active{ background:var(--accent); border-color:var(--accent); color:var(--bg); }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .gswatch{
+    aspect-ratio:1/1; border-radius:12px; border:1px solid var(--line); position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center; transition:transform .2s, border-color .2s;
+  }
+  .gswatch:hover{ transform:translateY(-4px); border-color:var(--accent); }
+  .gswatch svg{width:52%; height:52%;}
+  .gswatch-label{ position:absolute; bottom:12px; left:12px; right:12px; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:rgba(243,236,217,0.7); background:rgba(0,0,0,0.35); padding:4px 8px; border-radius:6px; }
+  @media (max-width:900px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.gallery-grid{grid-template-columns:1fr;}}
+
+  .gswatch img{width:100%;height:180px;object-fit:cover;display:block;border-radius:10px 10px 0 0;}
+</style>
+</head>
+<body class="pg-gallery">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="navcta">
+      <a href="contact.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Free Trial</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Gallery</span>
+    <h1>A sample of the stitch work we ship.</h1>
+    <p>Swap these placeholders for your own finished photos once you're ready to launch — each tile is tagged by placement so it's easy to filter.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="vector">Vector</button>
+      <button class="filter-btn" data-filter="chest">Left Chest</button>
+      <button class="filter-btn" data-filter="jacket">Jacket Back</button>
+      <button class="filter-btn" data-filter="cap">Caps</button>
+      <button class="filter-btn" data-filter="puff">3D Puff</button>
+      <button class="filter-btn" data-filter="embroidery">Embroidery</button>
+      <button class="filter-btn" data-filter="engraving">Engraving</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- vector -->
+      <div class="gswatch" data-cat="vector" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/gallery-1.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Vector · Line Art</div></div>
+      <div class="gswatch" data-cat="vector" style="background:color-mix(in srgb, var(--gold) 12%, var(--bg-card));"><img src="assets/gallery/gallery-2.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Vector · Icon Mark</div></div>
+      <!-- chest -->
+      <div class="gswatch" data-cat="chest" style="background:color-mix(in srgb, var(--teal) 12%, var(--bg-card));"><img src="assets/gallery/gallery-3.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Left Chest · Polo</div></div>
+      <div class="gswatch" data-cat="chest" style="background:color-mix(in srgb, var(--violet) 12%, var(--bg-card));"><img src="assets/gallery/gallery-4.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Left Chest · Badge</div></div>
+      <!-- jacket -->
+      <div class="gswatch" data-cat="jacket" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/gallery-5.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Jacket Back · Full Panel</div></div>
+      <div class="gswatch" data-cat="jacket" style="background:color-mix(in srgb, var(--gold) 12%, var(--bg-card));"><img src="assets/gallery/gallery-6.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Jacket Back · Emblem</div></div>
+      <!-- cap -->
+      <div class="gswatch" data-cat="cap" style="background:color-mix(in srgb, var(--teal) 12%, var(--bg-card));"><img src="assets/gallery/gallery-7.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Caps · Front Panel</div></div>
+      <div class="gswatch" data-cat="cap" style="background:color-mix(in srgb, var(--violet) 12%, var(--bg-card));"><img src="assets/gallery/gallery-8.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Caps · Side Panel</div></div>
+      <!-- puff -->
+      <div class="gswatch" data-cat="puff" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/gallery-1.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">3D Puff · Lettering</div></div>
+      <div class="gswatch" data-cat="puff" style="background:color-mix(in srgb, var(--gold) 12%, var(--bg-card));"><img src="assets/gallery/gallery-2.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">3D Puff · Block Logo</div></div>
+      <div class="gswatch" data-cat="vector" style="background:color-mix(in srgb, var(--teal) 12%, var(--bg-card));"><img src="assets/gallery/gallery-3.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Vector · Emblem</div></div>
+      <div class="gswatch" data-cat="chest" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/gallery-4.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Small Text · Left Chest</div></div>
+      <!-- embroidery -->
+      <div class="gswatch" data-cat="embroidery" style="background:color-mix(in srgb, var(--violet) 12%, var(--bg-card));"><img src="assets/gallery/gallery-6.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Embroidery · Stitch Detail</div></div>
+      <div class="gswatch" data-cat="embroidery" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/gallery-7.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Embroidery · Monogram</div></div>
+      <div class="gswatch" data-cat="embroidery" style="background:color-mix(in srgb, var(--gold) 12%, var(--bg-card));"><img src="assets/gallery/gallery-8.jpg" alt="Kentucky Digitizing embroidery work"><div class="gswatch-label">Embroidery · Patch</div></div>
+      <!-- engraving -->
+      <div class="gswatch" data-cat="engraving" style="background:color-mix(in srgb, var(--gold) 12%, var(--bg-card));"><img src="assets/gallery/ING 1.png" alt="Kentucky Digitizing engraving work"><div class="gswatch-label">Engraving · Logo</div></div>
+      <div class="gswatch" data-cat="engraving" style="background:color-mix(in srgb, var(--crimson) 12%, var(--bg-card));"><img src="assets/gallery/ING 2.png" alt="Kentucky Digitizing engraving work"><div class="gswatch-label">Engraving · Nameplate</div></div>
+      <div class="gswatch" data-cat="engraving" style="background:color-mix(in srgb, var(--teal) 12%, var(--bg-card));"><img src="assets/gallery/ING 3.png" alt="Kentucky Digitizing engraving work"><div class="gswatch-label">Engraving · Detail</div></div>
+      <div class="gswatch" data-cat="engraving" style="background:color-mix(in srgb, var(--violet) 12%, var(--bg-card));"><img src="assets/gallery/ING 4.png" alt="Kentucky Digitizing engraving work"><div class="gswatch-label">Engraving · Custom Design</div></div>
+	  <div class="gswatch" data-cat="engraving" style="background:color-mix(in srgb, var(--violet) 12%, var(--bg-card));"><img src="assets/gallery/ING 5.png" alt="Kentucky Digitizing engraving work"><div class="gswatch-label">Engraving · On Any Metal Design</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="cta-band">
+      <div><h2>Like what you see? Send your own design.</h2><p>Your first order is digitized free so you can judge the work firsthand.</p></div>
+      <a href="contact.html" class="btn btn-primary">Start Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+      <p>Embroidery digitizing and vector art conversion for shops that need clean files, fast — with a real digitizer behind every order.</p>
+    </div>
+    <div><h4>Navigate</h4><ul><li><a href="why-us.html">Why Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a></li><li><a href="tel:03463162099">03463162099</a></li><li>Mon–Sat, 9am–7pm</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Kentucky Digitizing. All rights reserved.</span><span>Owner: Muhammad Saiqb Ansari</span><a href="tel:03161618156" class="Naeem" >Developer: Naeem Ansari</a></div>
+</footer>
+<script src="assets/script.js"></script>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('#galleryGrid .gswatch').forEach(g=>{
+        g.style.display = (f==='all' || g.dataset.cat===f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
