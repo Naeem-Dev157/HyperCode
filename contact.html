@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem('kd-theme');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Kentucky Digitizing</title>
+<meta name="description" content="Get in touch with Kentucky Digitizing to start your free trial file or ask about an order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<style>
+  /* ---------- info strip ---------- */
+  .info-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px 40px; }
+  .info-card{ margin-bottom:22px; }
+  .info-card h4{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent); margin-bottom:8px; }
+  .info-card p{ margin:0; color:rgba(var(--ink),0.75); font-size:0.98rem; line-height:1.6; }
+  .info-card a{ text-decoration:underline; text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent); text-underline-offset:3px; }
+
+  /* ---------- layout ---------- */
+  .contact-grid{ display:grid; grid-template-columns:0.92fr 1.08fr; gap:30px; align-items:start; }
+  .contact-left{ display:flex; flex-direction:column; gap:16px; position:sticky; top:96px; }
+
+  /* ---------- stitching hoop ---------- */
+  .hoop-card{
+    position:relative; border-radius:22px; border:1px solid var(--line); overflow:hidden; padding:20px 18px 14px;
+    background:
+      radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 55%),
+      linear-gradient(rgba(var(--ink),.045) 1px, transparent 1px) 0 0/16px 16px,
+      linear-gradient(90deg, rgba(var(--ink),.045) 1px, transparent 1px) 0 0/16px 16px,
+      var(--bg-card);
+  }
+  .hoop-svg{ display:block; width:100%; height:auto; max-width:380px; margin:0 auto; filter:drop-shadow(0 18px 26px rgba(0,0,0,.28)); }
+  .hoop-cap{ display:flex; justify-content:space-between; align-items:center; margin-top:8px;
+    font:600 .7rem 'IBM Plex Mono',monospace; letter-spacing:.07em; text-transform:uppercase; color:rgba(var(--ink),.55); }
+  .hoop-cap .live{ color:var(--teal); display:inline-flex; align-items:center; gap:7px; }
+  .hoop-cap .live::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 0 color-mix(in srgb,var(--teal) 60%,transparent); animation:livePulse 1.8s infinite; }
+  @keyframes livePulse{ 70%{ box-shadow:0 0 0 9px transparent; } 100%{ box-shadow:0 0 0 0 transparent; } }
+
+  /* ---------- quick contact cards ---------- */
+  .qcard{
+    display:flex; align-items:center; gap:14px; padding:15px 18px; border-radius:16px;
+    background:var(--bg-card); border:1px dashed color-mix(in srgb,var(--accent) 55%, transparent);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  a.qcard:hover{ transform:translateX(6px); border-style:solid; border-color:var(--accent); box-shadow:0 14px 28px -18px color-mix(in srgb,var(--accent) 70%, transparent); }
+  .qicon{ width:44px; height:44px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:var(--on-accent); }
+  .qicon svg{ width:21px; height:21px; }
+  .qcard small{ display:block; font:600 .68rem 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:rgba(var(--ink),.5); margin-bottom:3px; }
+  .qcard strong{ display:block; font-size:.98rem; color:var(--canvas); font-weight:700; word-break:break-word; }
+
+  /* ---------- form card ---------- */
+  .contact-form-card{
+    position:relative; background:var(--bg-card); border:1px solid var(--line); border-radius:24px; padding:38px 34px 30px; overflow:hidden;
+  }
+  .contact-form-card::before{ /* stitched fabric edge */
+    content:""; position:absolute; inset:9px; border:2px dashed color-mix(in srgb,var(--accent) 38%, transparent); border-radius:17px; pointer-events:none;
+  }
+  .contact-form-card::after{ /* top thread */
+    content:""; position:absolute; left:0; right:0; top:0; height:4px;
+    background:linear-gradient(90deg,var(--crimson),var(--gold),var(--teal),var(--violet));
+  }
+  .contact-form-card > *{ position:relative; z-index:1; }
+  .contact-form-card h2{ font-size:clamp(1.55rem,2.6vw,2rem); font-weight:800; margin:4px 0 8px; color:var(--canvas); }
+  .contact-form-card .sub{ margin:0 0 18px; color:rgba(var(--ink),.68); font-size:.95rem; line-height:1.55; }
+  .pills{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .pill{ font:600 .68rem 'IBM Plex Mono',monospace; letter-spacing:.05em; text-transform:uppercase; padding:6px 11px; border-radius:20px;
+    border:1px solid color-mix(in srgb,var(--accent) 40%, transparent); color:rgba(var(--ink),.75); display:inline-flex; align-items:center; gap:7px; }
+  .pill i{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  .row-2{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; }
+  .contact-form-card .form-field{ min-width:0; }
+  .contact-form-card .form-field input, .contact-form-card .form-field textarea{
+    width:100%; min-width:0; background:var(--bg-soft); border-radius:10px; padding:13px 15px;
+    transition:border-color .2s, background .2s, box-shadow .2s;
+  }
+  .contact-form-card .form-field input:focus, .contact-form-card .form-field textarea:focus{
+    outline:none; border-color:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%, transparent);
+  }
+  .contact-form-card textarea{ resize:vertical; min-height:110px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font:600 .74rem 'IBM Plex Mono',monospace; letter-spacing:.03em; padding:9px 14px; border-radius:22px; cursor:pointer;
+    background:transparent; color:rgba(var(--ink),.75); border:1px solid var(--line);
+    transition:transform .2s ease, background .2s, color .2s, border-color .2s;
+  }
+  .chip:hover{ border-color:var(--accent); transform:translateY(-2px); color:var(--canvas); }
+  .chip[aria-checked="true"]{ background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+  .chip:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .send{ position:relative; overflow:hidden; width:100%; justify-content:center; padding:15px 20px; font-size:.98rem; gap:12px; border-radius:12px; }
+  .send .nd{ width:30px; height:14px; flex:none; transition:transform .5s cubic-bezier(.5,0,.8,.4), opacity .4s; }
+  .send:hover .nd{ transform:translateX(5px) rotate(-6deg); }
+  .send.go .nd{ transform:translateX(280px) rotate(-14deg); opacity:0; }
+  .send::after{ content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent); transform:skewX(-20deg); animation:sendShine 3.4s ease-in-out 1.5s infinite; }
+  @keyframes sendShine{ 0%{ left:-60%; } 40%,100%{ left:130%; } }
+  .form-status{ min-height:1.2em; margin:14px 0 0; font-size:.86rem; color:rgba(var(--ink),.75); }
+  .form-note{ margin:6px 0 0; font-size:.76rem; color:rgba(var(--ink),.45); }
+
+  @media (max-width:900px){
+    .contact-grid{ grid-template-columns:1fr; }
+    .contact-left{ position:static; }
+    .info-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){
+    .row-2{ grid-template-columns:1fr; }
+    .contact-form-card{ padding:32px 20px 24px; }
+  }
+  @media (prefers-reduced-motion:reduce){ .contact-form-card *, .hoop-card *{ animation:none !important; } }
+</style>
+</head>
+<body class="pg-contact">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="navcta">
+      <a href="contact.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Free Trial</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Contact</span>
+    <h1>Let's get your first file moving.</h1>
+    <p>Send your design and placement, and we'll come back with a quote and turnaround time — or just ask a question first.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <aside class="contact-left">
+        <div class="hoop-card">
+          <svg class="hoop-svg" viewBox="0 0 360 290" role="img" aria-label="A needle stitching an envelope inside an embroidery hoop">
+            <defs>
+              <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e6b966"/><stop offset=".5" stop-color="#b07d2a"/><stop offset="1" stop-color="#6e4a12"/>
+              </linearGradient>
+              <linearGradient id="thr" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" style="stop-color:var(--crimson)"/><stop offset=".5" style="stop-color:var(--gold)"/><stop offset="1" style="stop-color:var(--teal)"/>
+              </linearGradient>
+              <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#c3c9d2"/><stop offset="1" stop-color="#6b7280"/>
+              </linearGradient>
+              <mask id="envMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="400" height="400">
+                <path d="M-64 -38 L0 12 L64 -38 L64 48 L-64 48 Z" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"
+                      pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="100">
+                  <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;.7;1" dur="6.5s"
+                           calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1" repeatCount="indefinite"/>
+                </path>
+              </mask>
+            </defs>
+
+            <!-- hoop -->
+            <circle cx="180" cy="148" r="117" style="fill:rgba(var(--ink),.045)"/>
+            <circle cx="180" cy="148" r="124" fill="none" stroke="url(#wood)" stroke-width="13"/>
+            <circle cx="180" cy="148" r="117" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>
+            <g transform="translate(180 22)">
+              <rect x="-17" y="-12" width="34" height="26" rx="5" fill="url(#wood)"/>
+              <rect x="-17" y="-12" width="34" height="26" rx="5" fill="none" stroke="rgba(0,0,0,.35)"/>
+              <circle r="5.5" cy="1" fill="#3a2a0c"/><circle r="2" cy="1" fill="#b07d2a"/>
+            </g>
+
+            <!-- envelope + needle -->
+            <g transform="translate(180 148)">
+              <path d="M-64 -38 L0 12 L64 -38 L64 48 L-64 48 Z" fill="none" stroke-linejoin="round" style="stroke:rgba(var(--ink),.16)" stroke-width="3" stroke-dasharray="8 6"/>
+              <g>
+                <animate attributeName="opacity" values="1;1;1;0" keyTimes="0;.7;.93;1" dur="6.5s" repeatCount="indefinite"/>
+                <path d="M-64 -38 L0 12 L64 -38 L64 48 L-64 48 Z" fill="none" stroke="url(#thr)" stroke-width="3.6" stroke-linejoin="round"
+                      stroke-dasharray="8 6" mask="url(#envMask)"/>
+              </g>
+              <g>
+                <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.72;.8;1" dur="6.5s" repeatCount="indefinite"/>
+                <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" calcMode="spline"
+                               keyPoints="0;1;1" keyTimes="0;.7;1" keySplines=".4 0 .2 1;0 0 1 1" path="M-64 -38 L0 12 L64 -38 L64 48 L-64 48 Z"/>
+                <g style="filter:drop-shadow(0 0 5px rgba(255,241,176,.9))">
+                  <path d="M26 0 Q9 -2.6 -20 -2.6 L-25 -2.6 L-25 2.6 L-20 2.6 Q9 2.6 26 0Z" fill="url(#silver)"/>
+                  <ellipse cx="-19" cy="0" rx="4" ry="1.1" fill="#1b1409"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <div class="hoop-cap"><span>Stitching your message</span><span class="live">Studio online</span></div>
+        </div>
+
+        <a class="qcard" href="mailto:order@KentuckyDigitizing.com">
+          <span class="qicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+          <span><small>Email</small><strong>order@KentuckyDigitizing.com</strong></span>
+        </a>
+        <a class="qcard" href="tel:03463162099">
+          <span class="qicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+          <span><small>Call</small><strong>03463162099</strong></span>
+        </a>
+        <div class="qcard">
+          <span class="qicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><small>Hours</small><strong>Mon–Sat, 9am–7pm</strong></span>
+        </div>
+      </aside>
+
+      <div class="contact-form-card">
+        <span class="kicker">Start your free file</span>
+        <h2>Send us your design</h2>
+        <p class="sub">Share the placement, size and deadline and we'll reply with a quote.</p>
+        <div class="pills"><span class="pill"><i></i>6–8 hr turnaround</span><span class="pill"><i></i>First file free</span><span class="pill"><i></i>Same-day reply</span></div>
+
+        <div class="form-field"><label for="name">Full name</label><input id="name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="row-2">
+          <div class="form-field"><label for="email">Email</label><input id="email" type="email" placeholder="you@company.com" autocomplete="email"></div>
+          <div class="form-field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="Optional" autocomplete="tel"></div>
+        </div>
+        <div class="form-field">
+          <label id="svcLabel">Service needed</label>
+          <div class="chips" id="chips" role="radiogroup" aria-labelledby="svcLabel">
+            <button type="button" class="chip" role="radio" aria-checked="true">Vector Art</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">Left Chest</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">Jacket Back</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">Caps</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">3D Puff</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">Small Letter Text</button>
+            <button type="button" class="chip" role="radio" aria-checked="false">Not sure — advise me</button>
+          </div>
+          <input type="hidden" id="service" value="Vector Art">
+        </div>
+        <div class="form-field"><label for="msg">Tell us about your design</label><textarea id="msg" rows="4" placeholder="Placement, fabric, size, deadline..."></textarea></div>
+
+        <button type="button" class="btn btn-primary send" id="sendBtn">
+          <span>Send Message</span>
+          <svg class="nd" viewBox="0 0 30 14" aria-hidden="true"><path d="M29 7 Q10 4.6 2 4.6 L0.5 4.6 L0.5 9.4 L2 9.4 Q10 9.4 29 7Z" fill="currentColor"/><ellipse cx="4.6" cy="7" rx="2.2" ry=".8" style="fill:var(--accent)"/></svg>
+        </button>
+        <p class="form-status" id="formStatus" role="status"></p>
+        <p class="form-note">Your email app opens with the message ready — attach your artwork there.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap info-grid">
+    <div class="info-card"><h4>Studio</h4><p>Online Digitizing Studio</p></div>
+    <div class="info-card"><h4>Note</h4><p>Orders &amp; support: <a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a><br>Owner: Muhammad Saiqb Ansari</p></div>
+    <div class="info-card"><h4>Website Developer</h4><p>This website was designed and developed by <strong>Naeem Ansari</strong>. Looking to get a website built for your own business? <a href="tel:03161618156">Contact me</a>.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="brand"><img class="site-logo" src="assets/kentucky-digitizing-logo.png" alt="Kentucky Digitizing logo"><span class="brand-name">Kentucky Digitizing</span></a>
+      <p>Embroidery digitizing and vector art conversion for shops that need clean files, fast — with a real digitizer behind every order.</p>
+    </div>
+    <div><h4>Navigate</h4><ul><li><a href="why-us.html">Why Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:order@KentuckyDigitizing.com">order@KentuckyDigitizing.com</a></li><li><a href="tel:03463162099">03463162099</a></li><li>Mon–Sat, 9am–7pm</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Kentucky Digitizing. All rights reserved.</span><span>Owner: Muhammad Saiqb Ansari</span><span>Website by <a href="tel:03161618156">Naeem Ansari</a></span></div>
+</footer>
+<script src="assets/script.js"></script>
+<script>
+(function(){
+  // service chips
+  var chips=document.querySelectorAll('#chips .chip'), svc=document.getElementById('service');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.setAttribute('aria-checked','false');});
+      c.setAttribute('aria-checked','true'); svc.value=c.textContent.trim();
+    });
+  });
+  // send
+  var btn=document.getElementById('sendBtn');
+  btn.addEventListener('click',function(){
+    var g=function(id){return document.getElementById(id).value.trim();}, st=document.getElementById('formStatus');
+    if(!g('name')||!g('email')||!g('msg')){st.textContent='Please add your name, email and a short message.';return;}
+    var body='Name: '+g('name')+'\nEmail: '+g('email')+'\nPhone: '+(g('phone')||'-')+'\nService: '+g('service')+'\n\n'+g('msg');
+    st.textContent='Opening your email app to send this message...';
+    btn.classList.add('go');
+    setTimeout(function(){
+      location.href='mailto:order@KentuckyDigitizing.com?subject='+encodeURIComponent('Design inquiry: '+g('service'))+'&body='+encodeURIComponent(body);
+      setTimeout(function(){btn.classList.remove('go');},900);
+    },550);
+  });
+})();
+</script>
+
+
+</body>
+</html>
